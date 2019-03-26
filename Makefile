@@ -1,8 +1,7 @@
 CFLAGS = -Wall -O2
 GST_LIBS = `pkg-config --libs gstreamer-1.0`
 GST_CFLAGS = `pkg-config --cflags gstreamer-1.0 `
-BINDIR = /usr/bin
-INSTALL = install
+INSTALL ?= /usr/bin/install
 
 BINS = play play_flip record_high record_medium record_low
 
@@ -22,13 +21,6 @@ record_medium:
 
 record_low:
 	$(CC) $(CFLAGS) $(GST_CFLAGS) $(GST_LIBS) $(LDFLAGS) record_low.c -o record_low
-
-install:
-	$(INSTALL) -m 755 play $(BINDIR)
-	$(INSTALL) -m 755 play_flip $(BINDIR)
-	$(INSTALL) -m 755 record_high $(BINDIR)
-	$(INSTALL) -m 755 record_medium $(BINDIR)
-	$(INSTALL) -m 755 record_low $(BINDIR)
 
 clean:
 	$(RM) $(BINS)
