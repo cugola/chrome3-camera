@@ -7,7 +7,7 @@
 
 //#define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! image/jpeg,width=800,height=448 ! jpegdec ! imxipuvideosink sync=false"
 
-#define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! video/x-raw, framerate=30/1, width=640, height=360 ! autovideoconvert ! fbdevsink sync=false"
+#define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! video/x-raw, framerate=20/1, width=800, height=448 ! autovideoconvert ! fbdevsink sync=false"
 
 int main(int argc, char *argv[]) {
     GstElement *pipeline;
