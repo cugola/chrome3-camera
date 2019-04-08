@@ -7,7 +7,7 @@
 
 // #define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! queue max-size-buffers=1200 max-size-time=0 max-size-bytes=0 ! image/jpeg,width=1280,height=720,framerate=25/1 ! mux. alsasrc device=default:CARD=imx6wandboardsg provide-clock=true do-timestamp=true ! audio/x-raw,format=S16LE,rate=44100 ! queue max-size-buffers=0 max-size-time=5000000000 max-size-bytes=0 ! imxmp3audioenc bitrate=64 ! mux. matroskamux name=mux ! filesink name=my_filesink sync=false"  
 
-#define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! queue max-size-buffers=1200 max-size-time=0 max-size-bytes=0 ! image/jpeg,width=1280,height=720,framerate=25/1 ! mux. alsasrc device=default provide-clock=true do-timestamp=true ! 'audio/x-raw,format=S16LE,rate=44100' ! queue max-size-buffers=0 max-size-time=5000000000 max-size-bytes=0 ! imxmp3audioenc bitrate=64 ! mux. matroskamux name=mux ! filesink name=my_filesink sync=false"
+#define PIPELINE "v4l2src device=/dev/video0 do-timestamp=true ! queue max-size-buffers=1200 max-size-time=0 max-size-bytes=0 ! image/jpeg,width=1280,height=720,framerate=25/1 ! mux. alsasrc device=default provide-clock=true do-timestamp=true ! 'audio/x-raw,format=S16LE,rate=44100' ! queue max-size-buffers=0 max-size-time=5000000000 max-size-bytes=0 ! imxmp3audioenc bitrate=64 ! mux. matroskamux name=mux ! filesink name=my_filesink sync=false location=/tmp/aaa.mkv"
 
 
 int main(int argc, char *argv[]) {
